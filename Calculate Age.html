@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Age01</title>
+    <style>
+        /* Style for the body */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 50px; /* Adjust as needed */
+        }
+
+        /* Style for the h1 heading */
+        h1 {
+            color: #007bff;
+        }
+
+        /* Style for the p paragraph */
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for the input field */
+        input[type="date"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        /* Style for the button */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for the button on hover */
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the span displaying the age */
+        #age {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculate Current Age</h1>
+    <p>Enter your date of birth:</p>
+    <input type="date" id="dob">
+    <br><br>
+    <button onclick="calculateAge()">Calculate Age</button>
+    <p>Your age is: <span id="age"></span></p>
+    <script>
+        function calculateAge() 
+       {
+            const dateInput = document.getElementById("dob").value;
+            const dob = new Date(dateInput).getFullYear();
+            const now = new Date().getFullYear();
+            const age = now - dob;
+            
+            document.getElementById("age").innerText = age;
+        }
+    </script>
+</body>
+</html>
